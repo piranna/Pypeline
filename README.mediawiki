@@ -2,3 +2,7 @@
 Pypeline is a processing pipeline system for [http://www.python.org Python] based on [http://code.google.com/p/python-sqlparse python-sqlparse] pipeline system (also developed by me), and whose was inspired by [http://gstreamer.freedesktop.org GStreamer] pipeline system.
 
 It is mainly intended for when you need to perform several simple actions one-after-another to some data in a pipelined way, offering a simple, elegant and efficient way to do it.
+
+== Definitions ==
+* '''Filter''': a function, method or callable object that accept some (iterable) data as input parameter and return another (iterable) data as output. The format of the input and output data doesn't need to be fixed on the pipeline at all, only that when connecting ''filters'' between them the output data of one of them is "compatible" with the input data of the next one.
+* '''Pipe''': any class from Pypeline used to connect different ''filters'' between them.
