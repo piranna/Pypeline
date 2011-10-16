@@ -28,8 +28,8 @@ class Pipeline(list):
         """
 
         # Run the stream over all the filters on the pipeline
-        for filter in self:
-            stream = filter(stream)
+        for filt in self:
+            stream = filt(stream)
 
         # If last filter return a generator, staticalize it inside a list
         if isinstance(stream, GeneratorType):
