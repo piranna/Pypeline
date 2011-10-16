@@ -12,6 +12,18 @@ Created on 15/10/2011
 from types import GeneratorType
 
 
+def vectorizable(func):
+    """Decorator that allow vectorization on a callable object"""
+
+    def wrapper(stream):
+        try:
+            return [func(data) for data in stream]
+        except TypeError:
+            return func(stream)
+
+    return wrapper
+
+
 class Pipeline(list):
     """Pipe to content filters and process them sequentially
 
